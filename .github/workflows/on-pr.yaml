@@ -5,4 +5,4 @@ on:
 
 jobs:
   terraform-check:
-    uses: baezag/iac-components/.github/workflows/terraform-checks.yaml@main
+    uses: baezag/iac-components/.github/workflows/terraform-checks.yaml
