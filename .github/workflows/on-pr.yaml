@@ -1,0 +1,8 @@
+name: Pull Request Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  terraform-check:
+    use: baezag/iac-components/.github/workflows/terraform-checks.yaml
