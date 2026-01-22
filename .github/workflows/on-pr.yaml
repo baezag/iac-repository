@@ -5,5 +5,5 @@ on:
   pull_request:
 
 jobs:
-  terraform-check:
+  terraform-checks:
     uses: baezag/iac-components/.github/workflows/terraform-ci.yaml@dev
