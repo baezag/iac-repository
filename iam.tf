@@ -1,4 +1,5 @@
 resource "aws_iam_role" "example" {
+  count = 0
   name               = "yak_role"
   assume_role_policy = data.aws_iam_policy_document.instance_assume_role_policy.json
 
