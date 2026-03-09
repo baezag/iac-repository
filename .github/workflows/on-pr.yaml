@@ -7,3 +7,8 @@ on:
 jobs:
   terraform-checks:
     uses: baezag/iac-components/.github/workflows/test.yaml@dev
+    with:
+      environment: ${{ github.ref_name }}
+      workspace: ${{ vars.workspace }}
+    secrets: inherit
+    
