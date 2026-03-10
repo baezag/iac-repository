@@ -8,6 +8,6 @@ jobs:
     uses: baezag/iac-components/.github/workflows/test.yaml@dev
     with:
       environment: ${{ github.ref_name }}
-      workspace: ${GITHUB_REPOSITORY#*/}
+      workspace: test_input
     secrets: inherit
     
