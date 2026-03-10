@@ -4,5 +4,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  terraform-check:
-    uses: baezag/iac-components/.github/workflows/terraform-checks.yaml@main
+  terraform-checks:
+    uses: baezag/iac-components/.github/workflows/test.yaml@dev
+    with:
+      environment: ${{ github.ref_name }}
+      workspace: test_input
+    secrets: inherit
+    
