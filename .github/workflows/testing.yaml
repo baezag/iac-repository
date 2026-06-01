@@ -7,9 +7,6 @@ permissions:
   id-token: write
   contents: read
 
-on:
-  workflow_dispatch:
-
 jobs:
   oidc:
     runs-on: ubuntu-latest
