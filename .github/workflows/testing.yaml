@@ -1,0 +1,29 @@
+name: Get OIDC JWT
+
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+on:
+  workflow_dispatch:
+
+jobs:
+  oidc:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get OIDC token
+        run: |
+          TOKEN=$(curl -s \
+            -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=testing" \
+            | jq -r '.value')
+
+          echo "TOKEN=$TOKEN" >> $GITHUB_ENV
+
+      - name: Show claims
+        run: |
+          echo "$TOKEN" | cut -d '.' -f2 | base64 -d | jq .
